@@ -3,7 +3,6 @@ import { Route, IndexRoute } from 'react-router';
 import LoginPage from './containers/LoginContainer';
 import Dashboard from './containers/DashBoardContainer.js'
 import { LoginAuthenticator, DasbBoardAuthenticator } from './commons/Authenticator.js'
-console.log("process.env.NODE_ENV=====>>>",process.env.NODE_ENV);
 
 export default (
 		<Route path="/" >
