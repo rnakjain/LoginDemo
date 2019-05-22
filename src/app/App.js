@@ -11,7 +11,7 @@ export const store		=	ConfigureStore();
 function App() {
    return (
       <Provider store={store}> 
-        <Router history={browserHistory} routes={Routes} history={browserHistory} ></Router>
+        <Router routes={Routes} history={browserHistory} ></Router>
       </Provider>
    )
 }

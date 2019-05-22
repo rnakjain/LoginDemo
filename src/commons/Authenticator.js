@@ -3,12 +3,10 @@ import { CLIENT_LOGIN_REFERENCE, DEFAULT_URL } from './Constants.js'
 
 export const DasbBoardAuthenticator = (nextState, replace) => {
 	  
-	console.log('INSIDE Authenticator!');
+	console.log('INSIDE DasbBoardAuthenticator!');
 	
 	if( !isAuthenticated() ) 
 	{
-		console.info( 'nextState =>' , nextState );
-		console.log('Redirect to login!');
 		  replace({
 		     pathname: "/login",
 		     state   : { nextPathname: nextState.location.pathname, search: nextState.location.search }
@@ -18,7 +16,7 @@ export const DasbBoardAuthenticator = (nextState, replace) => {
 
 export const LoginAuthenticator = (nextState, replace) => {
 	
-  	console.log('INSIDE Authenticator!');
+  	console.log('INSIDE LoginAuthenticator!');
   
   	if( isAuthenticated() ) 
   	{
