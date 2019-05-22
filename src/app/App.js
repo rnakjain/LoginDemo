@@ -1,11 +1,9 @@
-
 import React from 'react'
 import { Provider } from 'react-redux'
 import { Router, browserHistory } from 'react-router'
 import routes from '../routes'
 import ConfigureStore from '../store/ConfigureStore'
 
-//To share the store with SocketConnection
 export const store = ConfigureStore();
 
 function App() {

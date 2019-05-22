@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getAuthToken } from '../commons/Authenticator';
 import { deleteAuthToken } from '../actions/AuthTokenAction'
-
 @connect( (store) => ({ login : store.AuthTokenReducer }) )
 class DashBoard extends Component {
 

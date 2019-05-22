@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { requestAuthToken } from '../actions/AuthTokenAction'
-
 @connect( (store) => ({ login : store.AuthTokenReducer }) )
 class LoginPage extends Component {
   constructor() {
