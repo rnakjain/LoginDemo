@@ -1,10 +1,16 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 require("babel-polyfill");
 const CompressionPlugin = require('compression-webpack-plugin');
+const path = require('path')
 
 module.exports = {
 
   entry: ["babel-polyfill", "./src/index.js"],   
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/'
+  },
   devServer: {
     historyApiFallback: true,
     compress: true,//To compress the bundle 
