@@ -1,15 +1,27 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { Router, browserHistory } from 'react-router'
-import routes from '../routes'
-import ConfigureStore from '../store/ConfigureStore'
+import LoginPage from '../containers/LoginPage/LoginContainer';
+import Dashboard from '../containers/DashBoardPage/DashBoardContainer'
+import UserContainer from '../containers/UserPage/UserContainer';import ConfigureStore from '../store/ConfigureStore'
+import { BrowserRouter as Router, Switch, Redirect, Route, useHistory } from 'react-router-dom';
 
 export const store = ConfigureStore();
 
 function App() {
+   // const history = useHistory();
    return (
       <Provider store={store}> 
-        <Router routes={routes} history={browserHistory} ></Router>
+      <Router>
+         <div>
+         <Switch>
+            <Route path='/' exact component={ LoginPage }/>
+            <Route path='/login' component={ LoginPage }/>
+            <Route path="/dashboard" component={ Dashboard }/>
+            <Route path="/users/:id" component={ UserContainer }/>
+            <Redirect path="*" to="/" />
+         </Switch>
+         </div>
+	   </Router>
       </Provider>
    )
 }

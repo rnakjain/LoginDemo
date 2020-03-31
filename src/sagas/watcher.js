@@ -1,8 +1,9 @@
 
 import { takeLatest } from 'redux-saga/effects'
-// import { CHAT_CONFIGURATION_REQUESTED, UPDATE_CHAT_CONFIG_REQUEST }  from '../actions/ChatConfigurationAction'
 import { TOKEN_REQUESTED, DELETE_TOKEN }  from '../actions/AuthTokenAction'
-import * as LoginSagas from './LoginSagas'
+import * as LoginSagas from './LoginSagas';
+import * as UserSagas from './UserSagas';
+import { USER_LIST_REQUESTED, USER_REQUESTED } from '../actions/UserAction';
 
 
 export function* watchUserLogin()
@@ -13,4 +14,14 @@ export function* watchUserLogin()
 export function* watchUserLogout()
 {
 	yield takeLatest( DELETE_TOKEN , LoginSagas.doUserLogout );
+}
+
+export function* watchgetUserList() 
+{
+	yield takeLatest(USER_LIST_REQUESTED, UserSagas.getUserList);
+}
+
+export function* watchgetUserById()
+{
+	yield takeLatest(USER_REQUESTED, UserSagas.getUserById);
 }

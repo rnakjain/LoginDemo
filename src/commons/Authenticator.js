@@ -1,31 +1,5 @@
 import cookie from 'react-cookie'
-import { CLIENT_LOGIN_REFERENCE, DEFAULT_URL } from './Constants.js'
-
-export const DasbBoardAuthenticator = (nextState, replace) => {
-	  
-	console.log('INSIDE DasbBoardAuthenticator!');
-	
-	if( !isAuthenticated() ) 
-	{
-		  replace({
-		     pathname: "/login",
-		     state   : { nextPathname: nextState.location.pathname, search: nextState.location.search }
-		  });
-	}
-};
-
-export const LoginAuthenticator = (nextState, replace) => {
-	
-  	console.log('INSIDE LoginAuthenticator!');
-  
-  	if( isAuthenticated() ) 
-  	{
-		replace({
-			pathname: DEFAULT_URL,
-			state   : { nextPathname: nextState.location.pathname, search: nextState.location.search }
-		});
-	}
-};
+import { CLIENT_LOGIN_REFERENCE } from './Constants.js'
 
 export const isAuthenticated	=	() => {
 	
@@ -35,7 +9,6 @@ export const isAuthenticated	=	() => {
 		return true;
 	return false;
 }
-
 
 export const getAuthToken	=	() => {
 	
