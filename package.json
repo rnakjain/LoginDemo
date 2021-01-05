@@ -21,7 +21,7 @@
     "webpack-dev-server": "^3.4.1"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "immer": "6.0.2",
     "react": "^16.8.6",
     "react-cookie": "^1.0.4",
