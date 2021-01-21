@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "immer": "6.0.2",
+    "immer": "8.0.1",
     "react": "^16.8.6",
     "react-cookie": "^1.0.4",
     "react-dom": "^16.8.6",
